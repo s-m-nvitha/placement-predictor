@@ -1,10 +1,15 @@
-# 🎯 Placement Predictor
+# Placement Predictor
 
-A Machine Learning web application that predicts whether a student is likely to get placed based on their **CGPA** and **IQ**.
+A Machine Learning web application that predicts whether a student is likely to be placed based on their CGPA and IQ.
 
-Built using **Flask**, **Logistic Regression**, and **Scikit-learn**.
+## 🌐 Live Demo
 
----
+**Try the application here:**
+https://Samanvithaaaaa.pythonanywhere.com
+
+## 📂 GitHub Repository
+
+https://github.com/s-m-nvitha/placement-predictor
 
 ## 📌 Project Overview
 
@@ -23,24 +28,21 @@ The web interface is built using **Flask** and provides an interactive user expe
 
 ## ✨ Features
 
-- Predicts placement chances instantly
-- User-friendly web interface
-- Input validation
-- Responsive glassmorphism UI
-- Modern glassmorphism design
-- Machine Learning prediction using Logistic Regression
+- Predicts placement chances using a Machine Learning model
+- Simple and responsive user interface
+- Input validation for CGPA and IQ
+- Built with Flask and Scikit-learn
 
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
 - Python
 - Flask
-- HTML5
-- CSS3
-- NumPy
 - Scikit-learn
-- Pickle
+- NumPy
+- HTML
+- CSS
 
 ---
 
@@ -87,9 +89,7 @@ placement-predictor/
 
 ---
 
-## 🚀 Installation
-
-### 1. Clone the repository
+## 🚀 ### 1. Clone the repository
 
 ```bash
 git clone https://github.com/s-m-nvitha/placement-predictor.git
@@ -122,6 +122,13 @@ http://127.0.0.1:5000
 
 ---
 
+## 🚀 Deployment
+
+The application is deployed on PythonAnywhere.
+
+Live Website:
+https://Samanvithaaaaa.pythonanywhere.com
+
 ## 📸 Screenshots
 
 ### 🏠 Home Page
@@ -137,12 +144,10 @@ http://127.0.0.1:5000
 
 ## 🔮 Future Improvements
 
-- Use more student features
+- Add more input features
 - Improve prediction accuracy
-- Train with a larger dataset
-- Display prediction probability
-- Deploy using Docker
-- Add user authentication
+- Enhance the UI
+- Store prediction history
 
 ---
 
