@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Placement Predictor</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Placement Predictor</h1>
+
+        <p class="subtitle">
+            Predict your campus placement based on CGPA and IQ
+        </p>
+
+        <form method="POST">
+
+            <div class="form-group">
+
+                <label for="cgpa">CGPA</label>
+
+                <input
+                    type="number"
+                    id="cgpa"
+                    name="cgpa"
+                    placeholder="Enter your CGPA"
+                    min="4"
+                    max="10"
+                    step="0.1"
+                    value="{{ cgpa if cgpa is not none else '' }}"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="iq">IQ</label>
+
+                <input
+                    type="number"
+                    id="iq"
+                    name="iq"
+                    placeholder="Enter your IQ"
+                    min="60"
+                    max="160"
+                    step="1"
+                    value="{{ iq if iq is not none else '' }}"
+                    required>
+
+            </div>
+
+            <button type="submit">
+                Predict Placement
+            </button>
+
+        </form>
+
+        {% if prediction %}
+
+        <div class="result
+            {% if prediction == 'Likely to be Placed' %}
+                placed
+            {% elif prediction == 'Not Likely to be Placed' %}
+                not-placed
+            {% else %}
+                error
+            {% endif %}
+        ">
+
+            <h3>Prediction Result</h3>
+
+            {% if prediction == 'Likely to be Placed' %}
+
+                <p>✅ <strong>{{ prediction }}</strong></p>
+
+            {% elif prediction == 'Not Likely to be Placed' %}
+
+                <p>❌ <strong>{{ prediction }}</strong></p>
+
+            {% else %}
+
+                <p>{{ prediction }}</p>
+
+            {% endif %}
+
+            {% if cgpa is not none and iq is not none %}
+
+                <p><strong>CGPA Entered:</strong> {{ cgpa }}</p>
+
+                <p><strong>IQ Entered:</strong> {{ iq }}</p>
+
+            {% endif %}
+
+        </div>
+
+        {% endif %}
+
+        <!-- About Model Section -->
+    <div class="footer">
+    Built using Logistic Regression • Flask • Scikit-learn
+</div>
+
+    </div>
+
+</body>
+
+</html>
