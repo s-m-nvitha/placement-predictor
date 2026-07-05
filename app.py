@@ -5,7 +5,13 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the trained model
-with open('model.pkl', 'rb') as f:
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model_path = os.path.join(BASE_DIR, "model.pkl")
+
+with open(model_path, "rb") as f:
     model = pickle.load(f)
 
 
